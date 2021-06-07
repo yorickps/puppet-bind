@@ -40,6 +40,8 @@ jobs:
 branches:
   only:
     - main
+    - master
     - /^v\d/
+    - /^dev-*/
 notifications:
   email: false
