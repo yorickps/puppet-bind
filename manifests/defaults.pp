@@ -1,7 +1,7 @@
 # ex: syntax=puppet si ts=4 sw=4 et
 
 class bind::defaults (
-    $supported              = undef,
+    Boolean $supported      = undef,
     $chroot_supported       = undef,
     $confdir                = undef,
     $namedconf              = undef,
@@ -25,9 +25,6 @@ class bind::defaults (
     $chroot_class           = undef,
     $chroot_dir             = undef,
 ) {
-    unless is_bool($supported) {
-        fail('Please ensure that the dependencies of the bind module are installed and working correctly')
-    }
     unless $supported {
         fail('Platform is not supported')
     }
